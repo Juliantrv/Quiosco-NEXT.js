@@ -13,7 +13,6 @@ export default function OrdersPage() {
       .then((data) => data);
   const {
     data,
-    error,
     isLoading,
   } = useSWR<OrderWhitProducts[]>(url, fetcher, {
     refreshInterval: 60000,

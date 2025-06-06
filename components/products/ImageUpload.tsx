@@ -17,7 +17,7 @@ export default function ImageUpload({ image }: Readonly<ImageUploadProps>) {
     onSuccess={(result, { widget }) => {
         if(result.event == 'success'){
             widget.close()
-            // @ts-ignore
+            // @ts-expect-error: typing error in the library
             setImageUrl(result.info.secure_url)
         }
     }}

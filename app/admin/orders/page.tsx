@@ -8,7 +8,7 @@ import { OrderWhitProducts } from "@/src/types";
 export default function OrdersPage() {
   const url = "/admin/orders/api"
   const fetcher = () => fetch(url).then( res => res.json()).then(data => data)
-  const { data: orders, error, isLoading } = useSWR<OrderWhitProducts[]>(url, fetcher, {
+  const { data: orders, isLoading } = useSWR<OrderWhitProducts[]>(url, fetcher, {
     refreshInterval: 60000,
     revalidateOnFocus: false
   })
